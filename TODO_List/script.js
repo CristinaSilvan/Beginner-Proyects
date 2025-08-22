@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function(){
         else if(e.target.tagName === "SPAN"){
             e.target.parentElement.remove();
         }
-    });
-}, false);
+    }, false);
+
+    
+});
 
