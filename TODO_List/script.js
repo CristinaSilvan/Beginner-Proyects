@@ -11,10 +11,23 @@ document.addEventListener("DOMContentLoaded", function(){
             let li = document.createElement("li");
             li.innerHTML = inputBox.value;
             listContainer.appendChild(li);
+
+            let spanCross = document.createElement("span");
+            spanCross.innerHTML = "&#215;";
+            li.appendChild(spanCross);
         }
         inputBox.value = "";
     }
 
     addButton.addEventListener("click", addTask);
-});
+
+    listContainer.addEventListener("click", function(e){
+        if(e.target.tagName === "LI"){
+            e.target.classList.toggle("checked");
+        }
+        else if(e.target.tagName === "SPAN"){
+            e.target.parentElement.remove();
+        }
+    });
+}, false);
 
